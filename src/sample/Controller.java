@@ -32,11 +32,14 @@ public class Controller implements Initializable {
 
 
     public void addItem(){
-        Contact contact = new Contact(Name.getText(), Phone.getText(), Email.getText());
-        items.add(contact);
-        Name.setText("");
-        Phone.setText("");
-        Email.setText("");
+        if (!Name.getText().isEmpty()&& !Phone.getText().isEmpty()&& !Email.getText().isEmpty()){
+            Contact contact = new Contact(Name.getText(), Phone.getText(), Email.getText());
+            items.add(contact);
+            Name.setText("");
+            Phone.setText("");
+            Email.setText("");
+        }
+
 
 //        items.add(new Contact(Name.getText()));
 //        Name.setText("");
